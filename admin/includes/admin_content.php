@@ -7,14 +7,19 @@
                 Admin
                 <small>Subheading</small>
             </h1>
-            <ol class="breadcrumb">
-                <li>
-                    <i class="fa fa-dashboard"></i> <a href="index.html">Dashboard</a>
-                </li>
-                <li class="active">
-                    <i class="fa fa-file"></i> Blank Page
-                </li>
-            </ol>
+
+            <?php
+
+            $sql = "SELECT * FROM users ";
+            $result = $database->query($sql);
+            while ($user_found = mysqli_fetch_array($result)) {
+                echo $user_found['username'] . "<br>";
+            }
+
+
+            ?>
+
+
         </div>
     </div>
     <!-- /.row -->
