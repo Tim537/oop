@@ -1,3 +1,6 @@
+<?php ob_start(); ?>
+<?php require_once('init.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,3 +35,8 @@
 <body>
 
     <div id="wrapper">
+        <?php
+        if($connection){
+        echo "<h1>We are connected</h1>";
+        }
+        ?>
