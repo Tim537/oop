@@ -1,30 +1,26 @@
 <?php include("includes/header.php"); ?>
 
 
-        <div class="row">
+<div class="row">
 
-            <!-- Blog Entries Column -->
-            <div class="col-sm-8">
-
-    
-            
-          Shit goes here
-         
-
-            </div>
+    <!-- Blog Entries Column -->
+    <div class="col-sm-8">
 
 
+        Shit goes here
 
 
-            <!-- Blog Sidebar Widgets Column -->
-            <div class="col-sm-4">
-
-            
-                 <?php include("includes/sidebar.php"); ?>
+    </div>
 
 
+    <!-- Blog Sidebar Widgets Column -->
+    <div class="col-sm-4">
 
-        </div>
-        <!-- /.row -->
 
-        <?php include("includes/footer.php"); ?>
+        <?php include("includes/sidebar.php"); ?>
+
+
+    </div>
+    <!-- /.row -->
+
+    <?php include("includes/footer.php"); ?>
