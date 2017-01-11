@@ -1,5 +1,10 @@
 <?php include("includes/header.php"); ?>
-
+<?php
+//Check for login
+if(!$session->is_signed_in()){
+    redirect('login.php');
+}
+?>
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <?php require_once('includes/top_nav.php'); ?>
