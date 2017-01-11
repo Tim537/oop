@@ -15,9 +15,10 @@
                 echo $user_found['username'] . "<br>";
             }
             echo "<br><br><h3>Get user by id:</h3>";
-            $user_result = User::find_user_by_id(2);
-            echo $user_result['username'] . "<br>";
 
+            $user_result = User::find_user_by_id(2);
+            $user = User::instantiation($user_result);
+            echo $user->username;
             ?>
 
 

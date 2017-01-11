@@ -4,6 +4,12 @@
 
 class User
 {
+    public $id;
+    public $username;
+    public $password;
+    public $first_name;
+    public $last_name;
+
 
     // Get all the users
     public static function find_all_users(){
@@ -22,5 +28,17 @@ class User
         global $database;
         $result = $database->query($sql);
         return $result;
+    }
+
+    public static function instantiation($user_result){
+        $the_object = new self;
+
+        $the_object->id = $user_result['id'];
+        $the_object->username = $user_result['username'];
+        $the_object->password = $user_result['password'];
+        $the_object->first_name = $user_result['first_name'];
+        $the_object->last_name = $user_result['last_name'];
+
+        return $the_object;
     }
 }
