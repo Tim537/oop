@@ -9,13 +9,14 @@
             </h1>
 
             <?php
-
-            $sql = "SELECT * FROM users ";
-            $result = $database->query($sql);
-            while ($user_found = mysqli_fetch_array($result)) {
+            echo "<h3>Get all users:</h3>";
+            $result_set = User::find_all_users();
+            while ($user_found = mysqli_fetch_array($result_set)) {
                 echo $user_found['username'] . "<br>";
             }
-
+            echo "<br><br><h3>Get user by id:</h3>";
+            $user_result = User::find_user_by_id(2);
+            echo $user_result['username'] . "<br>";
 
             ?>
 
