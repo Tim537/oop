@@ -9,16 +9,13 @@
             </h1>
 
             <?php
-            echo "<h3>Get all users:</h3>";
-            $result_set = User::find_all_users();
-            while ($user_found = mysqli_fetch_array($result_set)) {
-                echo $user_found['username'] . "<br>";
-            }
-            echo "<br><br><h3>Get user by id:</h3>";
 
-            $user_result = User::find_user_by_id(2);
-            $user = User::instantiation($user_result);
-            echo $user->username;
+            echo "<h3>Get all users:</h3>";
+            $users = User::find_all_users();
+
+            foreach ($users as $user) {
+                echo $user->username . "<br>";
+            }
             ?>
 
 
