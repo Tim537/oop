@@ -47,7 +47,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" class="form-control" name="password" value="<?php echo htmlentities($password); ?>">
+        <input type="password" class="form-control" name="password">
 
     </div>
 

@@ -5,11 +5,13 @@ class Session
 
     private $signed_in = false;
     public $user_id;
+    public $message;
 
     // Start the session
     function __construct() {
         session_start();
         $this->check_the_login();
+        $this->check_message();
     }
 
     // Returns true or false
@@ -40,6 +42,24 @@ class Session
         } else {
             unset($this->user_id);
             $this->signed_in = false;
+        }
+    }
+
+    // Display message to user
+    public function message($msg = ""){
+        if(!empty($msg)){
+            $_SESSION['message'] = $msg;
+        }else{
+            return $this->message;
+        }
+    }
+
+    public function check_message(){
+        if(isset($_SESSION['message'])){
+            $this->message = $_SESSION['message'];
+            unset($_SESSION['message']);
+        }else{
+            $this->message = "";
         }
     }
 }
