@@ -18,9 +18,10 @@ class User
 
     // Get a user with a specified id
     public static function find_user_by_id($id) {
-        $result = self::find_this_query("SELECT * FROM users WHERE id = $id LIMIT 1");
-        $found_user = mysqli_fetch_array($result);
-        return $found_user;
+        $the_result_array = self::find_this_query("SELECT * FROM users WHERE id = $id LIMIT 1");
+
+        return !empty($the_result_array) ? array_shift($the_result_array) : false;
+
     }
 
     // Run the queries and return the result

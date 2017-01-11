@@ -16,6 +16,13 @@
             foreach ($users as $user) {
                 echo $user->username . "<br>";
             }
+
+            echo "<h3>Get User By Id:</h3>";
+            $found_user = User::find_user_by_id(2);
+
+            echo $found_user->username;
+
+
             ?>
 
 
