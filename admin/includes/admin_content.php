@@ -9,19 +9,10 @@
             </h1>
 
             <?php
+                $user = User::find_user_by_id(3);
+                $user->last_name = "Shaw";
+                $user->update();
 
-//            $user = new User();
-//
-//            $user->username = "Jason123";
-//            $user->password = "123";
-//            $user->first_name = "Jason";
-//            $user->last_name = "Shaw";
-//
-//            if($user->create()){
-//                echo "User was created. ID: " . $user->id;
-//            }else{
-//                echo "Failed to create user";
-//            }
             ?>
 
 

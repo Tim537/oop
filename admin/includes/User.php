@@ -35,7 +35,7 @@ class User
         }
 
         return $the_object_array;
-    }
+    } // find_this_query
 
     public static function verify_user($username, $password) {
         global $database;
@@ -47,7 +47,7 @@ class User
         $the_result_array = self::find_this_query($sql);
         // Either return the row or false;
         return !empty($the_result_array) ? array_shift($the_result_array) : false;
-    }
+    } // verify_user
 
     // Puts result rows into an object
     public static function instantiation($the_record) {
@@ -60,14 +60,14 @@ class User
         }
 
         return $the_object;
-    }
+    } // instantiation
 
     // Checks to see if the property exists in the class
     private function has_the_attribute($the_attribute) {
         $object_properties = get_object_vars($this);
 
         return array_key_exists($the_attribute, $object_properties);
-    }
+    } // has_the_attribute
 
     public function create(){
         global $database;
@@ -86,6 +86,22 @@ class User
             return false;
         }
 
-    }
+    } // create
+
+    public function update(){
+        global $database;
+
+        $sql = "UPDATE users SET ";
+        $sql .= "username = '" . $database->escape_string($this->username) . "', ";
+        $sql .= "password = '" . $database->escape_string($this->password) . "', ";
+        $sql .= "first_name = '" . $database->escape_string($this->first_name) . "', ";
+        $sql .= "last_name = '" . $database->escape_string($this->last_name) . "' ";
+        $sql .= "WHERE id = " . $this->id;
+
+        $database->query($sql);
+        return (mysqli_affected_rows($database->connection) == 1) ? true : false;
+    } // update
+
+
 
 } // End of Class
