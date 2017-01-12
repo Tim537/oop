@@ -10,19 +10,18 @@
 
             <?php
 
-            echo "<h3>Get all users:</h3>";
-            $users = User::find_all_users();
-
-            foreach ($users as $user) {
-                echo $user->username . "<br>";
-            }
-
-            echo "<h3>Get User By Id:</h3>";
-            $found_user = User::find_user_by_id(2);
-
-            echo $found_user->username;
-
-
+//            $user = new User();
+//
+//            $user->username = "Jason123";
+//            $user->password = "123";
+//            $user->first_name = "Jason";
+//            $user->last_name = "Shaw";
+//
+//            if($user->create()){
+//                echo "User was created. ID: " . $user->id;
+//            }else{
+//                echo "Failed to create user";
+//            }
             ?>
 
 
