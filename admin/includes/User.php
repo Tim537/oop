@@ -69,7 +69,7 @@ class User
         return array_key_exists($the_attribute, $object_properties);
     } // has_the_attribute
 
-    public function create(){
+    public function create() {
         global $database;
 
         $sql = "INSERT INTO users (username, password, first_name, last_name) ";
@@ -79,16 +79,16 @@ class User
         $sql .= $database->escape_string($this->first_name) . "', '";
         $sql .= $database->escape_string($this->last_name) . "')";
 
-        if($database->query($sql)){
+        if ($database->query($sql)) {
             $this->id = $database->get_insert_id();
             return true;
-        }else{
+        } else {
             return false;
         }
 
     } // create
 
-    public function update(){
+    public function update() {
         global $database;
 
         $sql = "UPDATE users SET ";
@@ -102,6 +102,13 @@ class User
         return (mysqli_affected_rows($database->connection) == 1) ? true : false;
     } // update
 
+    public function delete() {
+        global $database;
 
+        $sql = "DELETE FROM users WHERE id = $this->id LIMIT 1";
+        $database->query($sql);
+
+        return (mysqli_affected_rows($database->connection) == 1) ? true : false;
+    } // Delete
 
 } // End of Class
