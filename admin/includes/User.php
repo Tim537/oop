@@ -14,13 +14,13 @@ class User
 
 
     // Get all the users
-    public static function find_all_users() {
-        return self::find_this_query("SELECT * FROM users");
+    public static function find_all() {
+        return self::find_this_query("SELECT * FROM " . self::$db_table);
     }
 
     // Get a user with a specified id
-    public static function find_user_by_id($id) {
-        $the_result_array = self::find_this_query("SELECT * FROM users WHERE id = $id LIMIT 1");
+    public static function find_by_id($id) {
+        $the_result_array = self::find_this_query("SELECT * FROM " . self::$db_table . " WHERE id = $id LIMIT 1");
 
         return !empty($the_result_array) ? array_shift($the_result_array) : false;
 
@@ -44,7 +44,7 @@ class User
         $username = $database->escape_string($username);
         $password = $database->escape_string($password);
 
-        $sql = "SELECT * FROM users WHERE username = '$username' AND password = $password LIMIT 1";
+        $sql = "SELECT * FROM " . self::$db_table . " WHERE username = '$username' AND password = $password LIMIT 1";
         // Run the query
         $the_result_array = self::find_this_query($sql);
         // Either return the row or false;
