@@ -12,11 +12,7 @@ class User extends Db_object
     public $first_name;
     public $last_name;
 
-
-
-
-
-
+    // Verify username and password
     public static function verify_user($username, $password) {
         global $database;
         $username = $database->escape_string($username);
@@ -27,11 +23,7 @@ class User extends Db_object
         $the_result_array = self::find_this_query($sql);
         // Either return the row or false;
         return !empty($the_result_array) ? array_shift($the_result_array) : false;
-    } // verify_user
-
-
-
-
+    } // verify_user()
 
     // Returns all object properties
     protected function properties() {
@@ -42,22 +34,24 @@ class User extends Db_object
             }
         }
         return $properties;
-    } // properties
+    } // properties()
 
-    protected function clean_properties(){
+    // Returns the properties escaped for sql
+    protected function clean_properties() {
         global $database;
-
         $clean_properties = array();
-        foreach($this->properties() as $key => $value){
+        foreach ($this->properties() as $key => $value) {
             $clean_properties[$key] = $database->escape_string($value);
         }
         return $clean_properties;
-    } // clean_properties
+    } // clean_properties()
 
+    // Calls create if it doesn't exist and update if it does exist
     public function save() {
         return isset($this->id) ? $this->update() : $this->create();
-    } // save
+    } // save()
 
+    // Creates a new user
     public function create() {
         global $database;
 
@@ -70,9 +64,9 @@ class User extends Db_object
         } else {
             return false;
         }
-    } // create
+    } // create()
 
-
+    // Updates an existing user
     public function update() {
         global $database;
 
@@ -88,8 +82,9 @@ class User extends Db_object
 
         $database->query($sql);
         return (mysqli_affected_rows($database->connection) == 1) ? true : false;
-    } // update
+    } // update()
 
+    // Deletes a user
     public function delete() {
         global $database;
 
@@ -97,6 +92,6 @@ class User extends Db_object
         $database->query($sql);
 
         return (mysqli_affected_rows($database->connection) == 1) ? true : false;
-    } // Delete
+    } // delete()
 
 } // End of Class
