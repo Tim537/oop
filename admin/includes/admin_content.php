@@ -9,8 +9,11 @@
             </h1>
 
             <?php
-//                $user = User::find_user_by_id(3);
-//                $user->delete();
+//                $user = User::find_user_by_id(4);
+//                $user->first_name = "Stacie";
+//                $user->last_name = "Shaw";
+//
+//                $user->save();
 
             ?>
 

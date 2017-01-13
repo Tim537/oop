@@ -88,6 +88,10 @@ class User
 
     } // create
 
+    public function save(){
+        return isset($this->id) ? $this->update() : $this->create();
+    }
+
     public function update() {
         global $database;
 
