@@ -12,18 +12,18 @@
 
             // Create a new user
 //            $user = new User();
-//            $user->username = 'Tony';
+//            $user->username = 'Randy';
 //            $user->password = 123;
-//            $user->first_name = 'Tony';
-//            $user->last_name = 'Smith';
+//            $user->first_name = 'Randy';
+//            $user->last_name = 'Jones';
 //
 //            $user->save();
 
             // Modify a User
-//                $user = User::find_user_by_id(6);
-//                $user->username = "Bob";
-//                $user->first_name = "Bob";
-//                $user->last_name = "Smith";
+//                $user = User::find_by_id(8);
+//                $user->username = "Fred";
+//                $user->first_name = "Fred";
+//                $user->last_name = "Zuma";
 //
 //                $user->save();
 
