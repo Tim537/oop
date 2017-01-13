@@ -27,10 +27,16 @@
 //
 //                $user->save();
 
-            $users = User::find_all();
-            foreach ($users as $user){
-                echo $user->username . "<br>";
-            }
+//            $photos = Photo::find_all();
+//            foreach ($photos as $photo){
+//                echo $photo->title . "<br>";
+//            }
+
+            $photos = new Photo();
+            $photos->title = "This is a picture";
+            $photos->size = 20;
+
+            $photos->save();
 
             ?>
 
