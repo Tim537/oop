@@ -32,11 +32,14 @@
 //                echo $photo->title . "<br>";
 //            }
 
-            $photos = new Photo();
-            $photos->title = "This is a picture";
-            $photos->size = 20;
+//            $photos = new Photo();
+//            $photos->title = "This is a picture";
+//            $photos->size = 20;
+//
+//            $photos->save();
 
-            $photos->save();
+            echo SITE_ROOT . "<br>";
+            echo INCLUDES_PATH . "<br>";
 
             ?>
 
