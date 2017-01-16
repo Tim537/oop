@@ -47,7 +47,7 @@ if (!$session->is_signed_in()) {
                                 <td><img src="<?php echo $obj->picture_path(); ?>" alt="" width="150">
                                 <div class="pictures_link">
                                     <a href="delete_photo.php?id=<?php echo $obj->id; ?>">Delete</a>
-                                    <a href="#">Edit</a>
+                                    <a href="edit_photo.php?id=<?php echo $obj->id; ?>">Edit</a>
                                     <a href="#">View</a>
                                 </div>
                                 </td>
