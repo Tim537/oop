@@ -46,12 +46,12 @@ if (!$session->is_signed_in()) {
                                 <tr>
                                 <td><img src="<?php echo $obj->picture_path(); ?>" alt="" width="150">
                                 <div class="pictures_link">
-                                    <a href="delete_photo.php?id=<?php echo $obj->photo_id; ?>">Delete</a>
+                                    <a href="delete_photo.php?id=<?php echo $obj->id; ?>">Delete</a>
                                     <a href="#">Edit</a>
                                     <a href="#">View</a>
                                 </div>
                                 </td>
-                                <td><?php echo $obj->photo_id; ?></td>
+                                <td><?php echo $obj->id; ?></td>
                                 <td><?php echo $obj->filename; ?></td>
                                 <td><?php echo $obj->title; ?></td>
                                 <td><?php echo $obj->size; ?></td>
