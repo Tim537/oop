@@ -47,8 +47,8 @@ class Photo extends Db_object
         }
     } // set_file()
 
-    public function picture_path(){
-        return $this->upload_directory.DS.$this->filename;
+    public function picture_path() {
+        return $this->upload_directory . DS . $this->filename;
     }
 
     public function save() {
@@ -85,12 +85,12 @@ class Photo extends Db_object
     } // save()
 
     // Delete
-    public function delete_photo(){
-        if($this->delete()){
-            $target_path = SITE_ROOT.DS.'admin'.DS.$this->picture_path();
+    public function delete_photo() {
+        if ($this->delete()) {
+            $target_path = SITE_ROOT . DS . 'admin' . DS . $this->picture_path();
 
             return unlink($target_path) ? true : false;
-        }else{
+        } else {
             return false;
         }
     } // delete()

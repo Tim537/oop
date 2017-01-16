@@ -3,6 +3,12 @@
     border-radius: 5px;
 }
 
+.user_image{
+    width: 62px;
+    height: auto;
+    border-radius: 5px;
+}
+
 
 /********** EDIT PHOT SIDEBAR ************/
 .photo-info-box {

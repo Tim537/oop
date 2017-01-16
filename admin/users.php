@@ -45,7 +45,8 @@ if (!$session->is_signed_in()) {
                             foreach ($users as $obj) : ?>
                                 <tr>
                                     <td><?php echo $obj->id; ?></td>
-                                    <td><img class="admin-user-thumbnail" src="<?php echo $obj->image; ?>" alt=""></td>
+                                    <td><img class="user_image" src="<?php echo $obj->image_path_and_placeholder(); ?>"
+                                             alt=""></td>
                                     <td><?php echo $obj->username; ?>
                                         <div class="action_links">
                                             <a href="delete_user.php?id=<?php echo $obj->id; ?>">Delete</a>
