@@ -1,4 +1,10 @@
 <?php include("includes/header.php"); ?>
+<?php
+//Check for login
+if (!$session->is_signed_in()) {
+    redirect('login.php');
+}
+?>
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -20,14 +26,42 @@
                         Users
                         <small>Subheading</small>
                     </h1>
-                    <ol class="breadcrumb">
-                        <li>
-                            <i class="fa fa-dashboard"></i> <a href="index.html">Dashboard</a>
-                        </li>
-                        <li class="active">
-                            <i class="fa fa-file"></i> Blank Page
-                        </li>
-                    </ol>
+
+                    <div class="col-md-12">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Photo</th>
+                                <th>Username</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            $users = User::find_all();
+
+                            foreach ($users as $obj) : ?>
+                                <tr>
+                                    <td><?php echo $obj->id; ?></td>
+                                    <td><img class="admin-user-thumbnail" src="<?php echo $obj->image; ?>" alt=""></td>
+                                    <td><?php echo $obj->username; ?>
+                                        <div class="action_links">
+                                            <a href="delete_user.php?id=<?php echo $obj->id; ?>">Delete</a>
+                                            <a href="edit_user.php?id=<?php echo $obj->id; ?>">Edit</a>
+                                            <a href="#">View</a>
+                                        </div>
+                                    </td>
+                                    <td><?php echo $obj->first_name; ?></td>
+                                    <td><?php echo $obj->last_name; ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                            </tbody>
+                        </table>
+
+                    </div>
+
                 </div>
             </div>
             <!-- /.row -->
