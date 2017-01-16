@@ -44,7 +44,7 @@ if (!$session->is_signed_in()) {
 
                             foreach ($photos as $obj) : ?>
                                 <tr>
-                                <td><img src="<?php echo $obj->picture_path(); ?>" alt="" width="150">
+                                <td><img class="admin-photo-thumbnail" src="<?php echo $obj->picture_path(); ?>" alt="">
                                 <div class="pictures_link">
                                     <a href="delete_photo.php?id=<?php echo $obj->id; ?>">Delete</a>
                                     <a href="edit_photo.php?id=<?php echo $obj->id; ?>">Edit</a>
