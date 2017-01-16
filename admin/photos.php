@@ -1,4 +1,10 @@
 <?php include("includes/header.php"); ?>
+<?php
+//Check for login
+if (!$session->is_signed_in()) {
+    redirect('login.php');
+}
+?>
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -33,13 +39,18 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
+                            <?php
+                            $photos = Photo::find_all();
+
+                            foreach ($photos as $obj) : ?>
+                                <tr>
+                                <td><img src="<?php echo $obj->picture_path(); ?>" alt="" width="150"></td>
+                                <td><?php echo $obj->photo_id; ?></td>
+                                <td><?php echo $obj->filename; ?></td>
+                                <td><?php echo $obj->title; ?></td>
+                                <td><?php echo $obj->size; ?></td>
+                                </tr>
+                            <?php endforeach; ?>
                             </tbody>
                         </table>
 
