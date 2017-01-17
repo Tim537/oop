@@ -5,7 +5,7 @@ function classAutoLoader($class) {
     //Causes problems with case sensitivity of file name...
     //$class = strtolower($class);
 
-    $the_path = "includes/{$class}.php";
+    $the_path = INCLUDES_PATH . DS ."{$class}.php";
 
     if (is_file($the_path) && !class_exists($class)) {
         require_once($the_path);
