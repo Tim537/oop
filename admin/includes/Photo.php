@@ -85,5 +85,15 @@ class Photo extends Db_object
         }
     } // delete()
 
+    // Shows photo info in sidebar of photo library modal
+    public static function display_sidebar_data($photo_id) {
+        $photo = Photo::find_by_id($photo_id);
+        $output = "<a class='thumbnail' href='#'><img width='100' src='{$photo->picture_path()}'></a>";
+        $output .= "<p>{$photo->filename}</p>";
+        $output .= "<p>{$photo->type}</p>";
+        $output .= "<p>{$photo->size}</p>";
+        return $output;
+    } // display_sidebar_data()
+
 
 } // End Class
