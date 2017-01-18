@@ -62,8 +62,6 @@
 modal-dialog {
     width: 90% !important;
 
-
-
 }
 
 .modal-body {
@@ -74,7 +72,7 @@ modal-dialog {
 
 .modal_thumbnails {
 
-    width: 150px;
+    width: 200px;
     height: 100px !important;
 }
 
