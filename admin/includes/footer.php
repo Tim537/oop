@@ -8,6 +8,7 @@
 <script src="js/bootstrap.min.js"></script>
 <!--  TinyMCE wysiwyg editor  -->
 <script src="http://cdn.tinymce.com/4/tinymce.min.js"></script>
+<script src="js/dropzone.js"></script>
 <script src="js/scripts.js"></script>
 <script type="text/javascript">
     google.charts.load('current', {'packages': ['corechart']});
