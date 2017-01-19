@@ -8,6 +8,7 @@ $(document).ready(function () {
     var image_name;
     var photo_id;
 
+
     $('.modal_thumbnails').click(function () {
         // Enable the Apply Selection button
         $("#set_user_image").prop('disabled', false);
@@ -49,6 +50,18 @@ $(document).ready(function () {
                 }
             }
         });
+    });
+
+    /************* Edit Photo Sidebar ***********/
+    $('.info-box-header').click(function () {
+        $('.inside').slideToggle("fast");
+        $("#toggle").toggleClass("glyphicon-menu-down");
+        $("#toggle").toggleClass("glyphicon-menu-up");
+    });
+
+    /**************** Confirm photo delete ****************/
+    $('.delete_link').click(function () {
+        return confirm("Are you sure you want to delete?");
     });
 
 

@@ -51,7 +51,7 @@ if (!$session->is_signed_in()) {
                                              alt=""></td>
                                     <td><?php echo $obj->username; ?>
                                         <div class="action_links">
-                                            <a href="delete_user.php?id=<?php echo $obj->id; ?>">Delete</a>
+                                            <a class="delete_link" href="delete_user.php?id=<?php echo $obj->id; ?>">Delete</a>
                                             <a href="edit_user.php?id=<?php echo $obj->id; ?>">Edit</a>
                                         </div>
                                     </td>

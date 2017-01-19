@@ -57,7 +57,10 @@ if (isset($_POST['update'])) {
                         Edit User
                     </h1>
                     <div class="col-md-6">
-                        <a href="#" data-toggle="modal" data-target="#photo-library"><img id="users_img" class="img-responsive" src="<?php echo $user->image_path_and_placeholder(); ?>" alt=""></a>
+                        <a href="#" data-toggle="modal" data-target="#photo-library"><img id="users_img"
+                                                                                          class="img-responsive"
+                                                                                          src="<?php echo $user->image_path_and_placeholder(); ?>"
+                                                                                          alt=""></a>
                     </div>
                     <form action="" method="post" enctype="multipart/form-data">
                         <div class="col-md-6">
@@ -84,7 +87,8 @@ if (isset($_POST['update'])) {
                                        value="<?php echo $user->last_name; ?>">
                             </div>
                             <div class="form-group">
-                                <a id="user-id" class="btn btn-danger" href="delete_user.php?id=<?php echo $user->id; ?>">Delete</a>
+                                <a id="user-id" class="btn btn-danger delete_link"
+                                   href="delete_user.php?id=<?php echo $user->id; ?>">Delete</a>
                                 <input class="btn btn-primary pull-right" type="submit" name="update" value="Update">
                             </div>
 

@@ -1,37 +1,32 @@
-.admin-photo-thumbnail{
+.admin-photo-thumbnail {
     width: 200px;
     border-radius: 5px;
 }
 
-.user_image{
+.user_image {
     width: 62px;
     height: auto;
     border-radius: 5px;
 }
 
-
 /********** EDIT PHOT SIDEBAR ************/
 .photo-info-box {
 
     border: 1px solid #e5e5e5;
-    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.04);
-    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
     background-color: #fff;
-
 
 }
 
 .info-box-header {
     padding: 6px;
     border-bottom: 1px solid #e5e5e5;
-    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.04);
-    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
     background-color: #fff;
 
 }
-
-
-
 
 .photo-info-box .box-inner {
     border-top: 1px solid #e5e5e5;
@@ -50,7 +45,7 @@
     font-weight: bold;
 }
 
-.photo-info-box .info-box-footer{
+.photo-info-box .info-box-footer {
 
     border-top: 1px solid #ddd;
     background-color: #ddd;
@@ -78,13 +73,17 @@ modal-dialog {
 
 #set_user_image {
 
-    margin:10px;
+    margin: 10px;
 
 }
-
 
 #modal_sidebar {
 
     position: fixed !important;
 
+}
+
+/****************** Login Page ********************/
+#login-id label {
+    color: #fff;
 }

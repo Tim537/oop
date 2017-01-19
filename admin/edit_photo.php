@@ -53,7 +53,8 @@ if (empty($_GET['id'])) {
                                        value="<?php echo $photo->title; ?>">
                             </div>
                             <div class="form-group">
-                                <a class="thumbnail" href="#"><img src="<?php echo $photo->picture_path(); ?>" alt=""></a>
+                                <a class="thumbnail" href="#"><img src="<?php echo $photo->picture_path(); ?>"
+                                                                   alt=""></a>
                             </div>
                             <div class="form-group">
                                 <label for="caption">Caption</label>
@@ -101,7 +102,7 @@ if (empty($_GET['id'])) {
                                     <div class="info-box-footer clearfix">
                                         <div class="info-box-delete pull-left">
                                             <a href="delete_photo.php?id=<?php echo $photo->id; ?>"
-                                               class="btn btn-danger btn-lg ">Delete</a>
+                                               class="btn btn-danger btn-lg delete_link">Delete</a>
                                         </div>
                                         <div class="info-box-update pull-right ">
                                             <input type="submit" name="update" value="Update"
