@@ -59,8 +59,8 @@ class User extends Db_object
         // Move the file
         if (move_uploaded_file($this->tmp_path, $target_path)) {
 
-                unset($this->tmp_path);
-                return true;
+            unset($this->tmp_path);
+            return true;
 
         } else {
             $this->errors[] = "The folder probably does not have permission";
@@ -81,7 +81,7 @@ class User extends Db_object
         return !empty($the_result_array) ? array_shift($the_result_array) : false;
     } // verify_user()
 
-    public function ajax_save_user_image($user_image){
+    public function ajax_save_user_image($user_image) {
         $this->user_image = $user_image;
         $this->save();
     }

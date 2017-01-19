@@ -28,17 +28,17 @@ class Paginate
     } // page_total()
 
     // Return bool if previous page
-    public function has_previous(){
+    public function has_previous() {
         return $this->previous() >= 1 ? true : false;
     } // has_previous()
 
     // Return bool if next page
-    public function has_next(){
+    public function has_next() {
         return $this->next() <= $this->page_total() ? true : false;
     } // has_next()
 
     // Returns the offset
-    public function offset(){
+    public function offset() {
         return ($this->current_page - 1) * $this->items_per_page;
     } // offset()
 

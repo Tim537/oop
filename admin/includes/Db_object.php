@@ -129,7 +129,7 @@ class Db_object
         return (mysqli_affected_rows($database->connection) == 1) ? true : false;
     } // delete()
 
-    public static function count_all(){
+    public static function count_all() {
         global $database;
         $sql = "SELECT COUNT(*) FROM " . static::$db_table;
         $result_set = $database->query($sql);

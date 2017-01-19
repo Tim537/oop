@@ -1,15 +1,15 @@
-.home_page_photo{
+.home_page_photo {
     width: 200px;
     height: 150px !important;
 }
 
 /********* Home pagination **********/
-.pager .active a{
+.pager .active a {
     background-color: #000;
     color: #fff;
 }
 
-.pager .active a:hover{
+.pager .active a:hover {
     background-color: #000;
     color: #fff;
 }

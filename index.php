@@ -41,13 +41,13 @@ $photos = Photo::find_by_query($sql);
                     if ($paginate->has_previous()) {
                         echo "<li class='previous'><a href='index.php?page={$paginate->previous()}'>Previous</a></li>";
                     }
-                    
+
                     // Page Numbers
-                    for($i = 1; $i <= $paginate->page_total(); $i++){
-                        if($i == $paginate->current_page){
-                            echo"<li class='active'><a>$i</a></li>";
-                        }else{
-                            echo"<li><a href='index.php?page={$i}'>$i</a></li>";
+                    for ($i = 1; $i <= $paginate->page_total(); $i++) {
+                        if ($i == $paginate->current_page) {
+                            echo "<li class='active'><a>$i</a></li>";
+                        } else {
+                            echo "<li><a href='index.php?page={$i}'>$i</a></li>";
                         }
                     }
 

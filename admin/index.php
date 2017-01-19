@@ -1,7 +1,7 @@
 <?php include("includes/header.php"); ?>
 <?php
 //Check for login
-if(!$session->is_signed_in()){
+if (!$session->is_signed_in()) {
     redirect('login.php');
 }
 ?>
