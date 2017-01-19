@@ -18,6 +18,8 @@ if (isset($_POST['create'])) {
 
         $user->upload_photo();
         $user->create();
+        $session->message("The user has been created");
+        redirect('users.php');
 
     }
 }

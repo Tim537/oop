@@ -14,20 +14,21 @@ class Session
         $this->visitor_count();
         $this->check_the_login();
         $this->check_message();
-    }
+    } // __construct()
 
-    public function visitor_count(){
-        if(isset($_SESSION['count'])){
+    // Counts page views in session
+    public function visitor_count() {
+        if (isset($_SESSION['count'])) {
             return $this->count = $_SESSION['count']++;
-        }else{
+        } else {
             return $this->count = $_SESSION['count'] = 1;
         }
-    }
+    } // visitor_count()
 
-    // Returns true or false
+    // Check for Login Returns true or false
     public function is_signed_in() {
         return $this->signed_in;
-    }
+    } // is_signed_in()
 
     // Login the user
     public function login($user) {
@@ -35,14 +36,14 @@ class Session
             $this->user_id = $_SESSION['user_id'] = $user->id;
             $this->signed_in = true;
         }
-    }
+    } // login()
 
     // Logout the user
-    public function logout(){
+    public function logout() {
         unset($_SESSION['user_id']);
         unset($this->user_id);
         $this->signed_in;
-    }
+    } // logout()
 
     // Set the properties if user is logged in.
     private function check_the_login() {
@@ -53,25 +54,26 @@ class Session
             unset($this->user_id);
             $this->signed_in = false;
         }
-    }
+    } // check_the_login()
 
     // Display message to user
-    public function message($msg = ""){
-        if(!empty($msg)){
+    public function message($msg = "") {
+        if (!empty($msg)) {
             $_SESSION['message'] = $msg;
-        }else{
+        } else {
             return $this->message;
         }
-    }
+    } // message()
 
-    public function check_message(){
-        if(isset($_SESSION['message'])){
+    private function check_message() {
+        if (isset($_SESSION['message'])) {
             $this->message = $_SESSION['message'];
             unset($_SESSION['message']);
-        }else{
+        } else {
             $this->message = "";
         }
-    }
+    } // check_message()
 }
 
 $session = new Session();
+// $message = $session->message();

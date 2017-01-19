@@ -21,11 +21,14 @@ if (isset($_POST['update'])) {
 
         if (empty($_FILES['user_image'])) {
             $user->save();
+            $session->message("The user has been updated");
+            redirect("users.php");
         } else {
             $user->set_file($_FILES['user_image']);
             $user->upload_photo();
             $user->save();
-            redirect("edit_user.php?id={$user->id}");
+            $session->message("The user has been updated");
+            redirect("users.php");
         }
     }
 }
